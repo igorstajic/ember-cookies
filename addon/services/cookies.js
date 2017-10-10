@@ -143,7 +143,7 @@ export default Service.extend({
         return acc;
       }
 
-      if (secure && protocol !== 'https') {
+      if (secure && protocol !== 'https:') {
         return acc;
       }
 
