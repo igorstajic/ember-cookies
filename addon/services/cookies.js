@@ -124,7 +124,8 @@ export default Service.extend({
 
     // cannot use deconstruct here
     let host = this.get('_fastBoot.request.host');
-
+    // Remove port numbers from hostname. 
+    host = host.replace(/(.*)(:\d*.*)/, "$1");
     return A(keys(fastBootCookiesCache)).reduce((acc, name) => {
       let { value, options } = fastBootCookiesCache[name];
       options = options || {};
